@@ -133,4 +133,12 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  var unique = array.filter(function(item, pos) {
+    return array.indexOf(item) == pos;
+  });
+
+  cb(unique);
 }
+removeDuplicates([1, 2, 2, 4, 5], function(result) {
+  console.log(result);
+});
